@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dyaka Siri Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single left-aligned column, mono labels in a left gutter on desktop; a signal wave (sine to square) is the one flourish. */
+:root{
+  --bg:#f3f5f2; --surface:#e8ece6; --fg:#16211d; --muted:#55645d; --line:#c9d1cb;
+  --accent:#0b6b57; --accent-ink:#ffffff; --warm:#b4540f;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1714; --surface:#17211d; --fg:#e6ede9; --muted:#9aaaa2; --line:#2b3a34;
+  --accent:#4fd1b0; --accent-ink:#0f1714; --warm:#f0a35e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1714; --surface:#17211d; --fg:#e6ede9; --muted:#9aaaa2; --line:#2b3a34;
+  --accent:#4fd1b0; --accent-ink:#0f1714; --warm:#f0a35e; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto}
+header{padding-block:clamp(40px,8vw,96px) 40px}
+.status{display:inline-flex;align-items:center;gap:.6rem;font:500 .8rem/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.dot{flex:none;width:.55rem;height:.55rem;border-radius:50%;background:var(--accent)}
+h1{font:700 clamp(2.6rem,9.5vw,6.2rem)/.95 var(--display);letter-spacing:-.03em;margin:1.2rem 0 1rem;text-wrap:balance}
+.role{font:500 .9rem var(--mono);color:var(--warm);margin:0 0 1.4rem;letter-spacing:.03em}
+.lede{font-size:clamp(1.05rem,2.3vw,1.3rem);line-height:1.55;max-width:42rem;margin:0}
+.contact{display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;margin:1.6rem 0 0;font:400 .9rem var(--mono)}
+.contact span{color:var(--muted)}
+.wave{display:block;width:100%;height:56px;margin-top:2.5rem}
+.wave path{fill:none;stroke:var(--accent);stroke-width:2;vector-effect:non-scaling-stroke}
+section{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1rem 2.5rem;padding-block:2.5rem;border-top:1px solid var(--line)}
+section>h2{font:500 .8rem/1.6 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:.35rem 0 0}
+.items{display:grid;gap:2rem;min-width:0}
+.item h3{font:700 1.45rem/1.2 var(--display);letter-spacing:-.01em;margin:0 0 .25rem;text-wrap:balance}
+.meta{font:400 .82rem var(--mono);color:var(--warm);margin:0 0 .6rem}
+.item p{margin:0 0 .8rem;max-width:42rem}
+.item ul.pts{margin:0 0 .9rem;padding-left:1.1rem;max-width:42rem}
+.item ul.pts li{padding:.15rem 0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.tags li{font:400 .78rem var(--mono);padding:.2rem .55rem;border:1px solid var(--line);border-radius:3px;background:var(--surface)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.8rem 2rem}
+.skills h3{font:500 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;margin:0 0 .5rem;color:var(--accent)}
+.skills ul{margin:0;padding:0;list-style:none}
+.skills li{padding:.2rem 0;border-bottom:1px dashed var(--line)}
+.plain{margin:0;padding:0;list-style:none;display:grid;gap:.7rem}
+.plain li{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-bottom:.7rem;border-bottom:1px dashed var(--line)}
+.plain span{font:400 .82rem var(--mono);color:var(--muted)}
+.edu strong{font:700 1.2rem var(--display)}
+.edu p{margin:.15rem 0}
+footer{border-top:1px solid var(--line);padding-block:2rem 3rem;font:400 .82rem var(--mono);color:var(--muted)}
+@media (max-width:720px){section{grid-template-columns:minmax(0,1fr);gap:.4rem}}
+@media (prefers-reduced-motion:no-preference){.dot{animation:pulse 2.4s ease-in-out infinite}}
+@keyframes pulse{50%{opacity:.35}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="status"><span class="dot"></span>Open to entry-level roles · Hyderabad · Willing to relocate</div>
+  <h1>Dyaka Siri</h1>
+  <p class="role">HR · Talent Acquisition · HR Operations</p>
+  <p class="lede">B.E. graduate in Electronics &amp; Communication Engineering looking for a first role in HR, talent acquisition or HR operations. I bring clear communication, careful documentation and data accuracy, built through student coordination, community work and customer support.</p>
+  <p class="contact"><span class="c"><span>Email</span> <a href="https://mail.google.com/mail/?view=cm&amp;to=siridyaka@gmail.com">siridyaka@gmail.com</a></span><span class="c"><span>Phone</span> <a href="tel:+917386348913">+91 73863 48913</a></span><span class="c"><span>Location</span> Hyderabad, India</span></p>
+</header>
+
+<main>
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>HR &amp; recruitment</h3><ul><li>Talent acquisition</li><li>Recruitment coordination</li><li>Candidate communication and follow-up</li><li>Interview scheduling</li><li>Resume screening</li><li>Recruitment documentation</li></ul></div>
+    <div><h3>Communication</h3><ul><li>Written and verbal communication</li><li>Active listening</li><li>Team coordination</li><li>Stakeholder communication</li><li>Professional follow-up</li></ul></div>
+    <div><h3>Administration</h3><ul><li>Documentation and record maintenance</li><li>Process adherence</li><li>Task prioritization</li><li>Data accuracy and quality checks</li></ul></div>
+    <div><h3>Tools</h3><ul><li>Microsoft Excel, Word, PowerPoint</li><li>Google Sheets</li><li>Canva</li><li>SQL</li><li>Python fundamentals</li></ul></div>
+    <div><h3>Working style</h3><ul><li>Analytical thinking and problem-solving</li><li>Attention to detail</li><li>Quick learner, adaptable</li><li>Teamwork and presentation skills</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div class="items">
+    <article class="item">
+      <h3>Sensor-testing internship, DRDO</h3>
+      <p class="meta">Apr – Jun 2024 · Internship</p>
+      <p>Worked on sensor testing during a three-month internship.</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="items">
+    <article class="item">
+      <h3>Virtual Mouse</h3>
+      <p class="meta">Feb – May 2025 · Python</p>
+      <ul class="pts">
+        <li>Built a Python virtual mouse using OpenCV, MediaPipe, SpeechRecognition and PyAutoGUI.</li>
+        <li>Used hand landmark detection to track hand movement and control the cursor with gestures.</li>
+        <li>Added voice commands for hands-free use, and gesture recognition for cursor movement and clicking.</li>
+        <li>Ran functional testing, debugging and troubleshooting to improve accuracy and usability.</li>
+      </ul>
+      <ul class="tags"><li>Python</li><li>OpenCV</li><li>MediaPipe</li><li>PyAutoGUI</li><li>SpeechRecognition</li></ul>
+    </article>
+    <article class="item">
+      <h3>Smart Parking System</h3>
+      <p class="meta">Nov 2023 – Feb 2024 · Academic project</p>
+      <p>A sensor-based parking project on basic Arduino and IR sensor hardware.</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Leadership</h2>
+  <div class="items">
+    <article class="item">
+      <h3>AECES Coordinator</h3>
+      <p class="meta">MVSR Engineering College</p>
+      <ul class="pts">
+        <li>Coordinated student activities and supported event planning, with the team finishing tasks on time.</li>
+        <li>Communicated with faculty, delegated responsibilities and followed up on requirements.</li>
+      </ul>
+    </article>
+    <article class="item">
+      <h3>NSS Volunteer</h3>
+      <p class="meta">MVSR Engineering College</p>
+      <p>Joined community service initiatives and worked with other volunteers on planned activities.</p>
+    </article>
+    <article class="item">
+      <h3>Street Cause Volunteer</h3>
+      <p class="meta">MVSR Engineering College</p>
+      <p>Supported community initiatives through teamwork and active participation.</p>
+    </article>
+    <p class="meta" style="margin:0">Also: IEEE student member (2022–2025) · NCC candidate</p>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="items">
+    <div class="edu"><strong>B.E., Electronics &amp; Communication Engineering</strong><p>MVSR Engineering College, Hyderabad · 2021–2025</p><p class="meta">CGPA 8.37 / 10</p></div>
+    <div class="edu"><strong>Intermediate</strong><p>Narayana Junior College, Hyderabad · 2019–2021</p><p class="meta">95.4%</p></div>
+    <div class="edu"><strong>CBSE</strong><p>Hindu Public School, Hyderabad · 2017–2019</p><p class="meta">86.4%</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <ul class="plain">
+    <li>Oracle Agentic AI Foundations Associate <span>Aug 2026</span></li>
+    <li>Data Analytics Job Simulation <span>Deloitte</span></li>
+    <li>SQL <span>Oracle Academy</span></li>
+    <li>Cisco AICTE Virtual Internship Program <span>Cisco</span></li>
+    <li>Cisco Networking Workshop <span>Cisco</span></li>
+    <li>Introduction to Packet Tracer <span>Cisco</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Languages</h2>
+  <ul class="tags"><li>English</li><li>Telugu</li><li>Hindi</li></ul>
+</section>
+</main>
+
+<footer>Dyaka Siri · Hyderabad, India</footer>
+</div>
+</body>
+</html>
